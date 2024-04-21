@@ -20,7 +20,6 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     height: '100%',
-    borderWidth: 10,
     justifyContent: 'center'
   },
 });

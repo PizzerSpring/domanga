@@ -1,13 +1,16 @@
 /* eslint-disable */
 
 import React from "react";
-import {StyleSheet, TextInput, View, } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View, Pressable } from "react-native";
 
 const Login = () => {
   return (
     <View style={styles.container}>
       <TextInput style={styles.borderInput}></TextInput>
       <TextInput style={styles.borderInput}></TextInput>
+      <Pressable style={styles.buttonStyle}>
+        <Text style={styles.buttonTextStyle}>Вход</Text>
+      </Pressable>
     </View>
   );
 };
@@ -22,7 +25,20 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     width: 200,
-    marginTop: 40
+    marginTop: 40,
+  },
+  buttonStyle: {
+    borderColor: '#000000',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderRadius: 10,
+    width: 200,
+    marginTop: 40,
+    backgroundColor: '#b9f7f5',
+  },
+  buttonTextStyle: {
+    textAlign: 'center',
+    padding: 10,
   }
 });
 
