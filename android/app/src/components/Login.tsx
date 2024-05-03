@@ -1,16 +1,22 @@
 /* eslint-disable */
 
 import React from "react";
-import { Button, StyleSheet, Text, TextInput, View, Pressable } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View, Pressable, Linking } from "react-native";
+import WebView from "react-native-webview";
 
 const Login = () => {
   return (
     <View style={styles.container}>
-      <TextInput style={styles.borderInput}></TextInput>
+      {/*<WebView source={{uri: 'https://www.google.com/'}}/>*/}
+      {/*<TextInput style={styles.borderInput}></TextInput>
       <TextInput style={styles.borderInput}></TextInput>
       <Pressable style={styles.buttonStyle}>
         <Text style={styles.buttonTextStyle}>Вход</Text>
-      </Pressable>
+        <Text style={{color: 'blue'}}
+              onPress={() => Linking.openURL('https://remanga.org/')}>
+          Remanga
+        </Text>
+      </Pressable>*/}
     </View>
   );
 };
