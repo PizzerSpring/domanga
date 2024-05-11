@@ -20,7 +20,11 @@ const Libraries = () => {
                    style={{ width: 24, height: 24 }} />
           </View>
         </View>
-        <View></View>
+        <View style={styles.libraryContentInner}>
+          <Image source={require("../assets/images/empty.png")}
+                 style={[{ width: 64, height: 64 }, styles.libraryContentImg]} />
+          <Text style={styles.libraryContentText}>Ваша библиотека пуста</Text>
+        </View>
       </View>
     </View>
   );
@@ -43,7 +47,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    marginBottom: 250
   },
   libraryText: {
     fontSize: 24,
@@ -54,6 +59,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     flexBasis: 100
+  },
+  libraryContentInner: {
+    alignItems: "center",
+  },
+  libraryContentImg: {
+    marginBottom: 30
+  },
+  libraryContentText: {
+    color: "#55503d"
   }
 });
 
