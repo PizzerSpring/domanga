@@ -2,6 +2,7 @@
 
 import React from "react";
 import { View, StyleSheet, Text, Image, Button } from "react-native";
+import Nav from "./Nav";
 
 const Libraries = ({navigation}) => {
   return (
@@ -24,12 +25,7 @@ const Libraries = ({navigation}) => {
           <Image source={require("../assets/images/empty.png")}
                  style={[{ width: 64, height: 64 }, styles.libraryContentImg]} />
           <Text style={styles.libraryContentText}>Ваша библиотека пуста</Text>
-          <Button
-            title="Go to Login"
-            onPress={() =>
-              navigation.navigate('Login')
-            }
-          />
+          <Nav navigation={navigation}/>
         </View>
       </View>
     </View>

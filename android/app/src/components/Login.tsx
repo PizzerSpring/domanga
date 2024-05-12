@@ -3,11 +3,13 @@
 import React from "react";
 import { Button, StyleSheet, Text, TextInput, View, Pressable, Linking } from "react-native";
 import WebView from "react-native-webview";
+import Nav from "./Nav";
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.buttonTextStyle}>Вход</Text>
+      <Nav navigation={navigation}/>
       {/*<WebView source={{uri: 'https://www.google.com/'}}/>*/}
       {/*<TextInput style={styles.borderInput}></TextInput>
       <TextInput style={styles.borderInput}></TextInput>
