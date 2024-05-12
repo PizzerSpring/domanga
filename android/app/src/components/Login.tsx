@@ -7,6 +7,7 @@ import WebView from "react-native-webview";
 const Login = () => {
   return (
     <View style={styles.container}>
+      <Text style={styles.buttonTextStyle}>Вход</Text>
       {/*<WebView source={{uri: 'https://www.google.com/'}}/>*/}
       {/*<TextInput style={styles.borderInput}></TextInput>
       <TextInput style={styles.borderInput}></TextInput>

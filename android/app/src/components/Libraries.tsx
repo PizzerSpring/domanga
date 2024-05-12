@@ -1,9 +1,9 @@
 /* eslint-disable */
 
 import React from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, Button } from "react-native";
 
-const Libraries = () => {
+const Libraries = ({navigation}) => {
   return (
     <View style={styles.library}>
       <View style={styles.container}>
@@ -24,6 +24,12 @@ const Libraries = () => {
           <Image source={require("../assets/images/empty.png")}
                  style={[{ width: 64, height: 64 }, styles.libraryContentImg]} />
           <Text style={styles.libraryContentText}>Ваша библиотека пуста</Text>
+          <Button
+            title="Go to Login"
+            onPress={() =>
+              navigation.navigate('Login')
+            }
+          />
         </View>
       </View>
     </View>
@@ -31,17 +37,17 @@ const Libraries = () => {
 };
 
 const styles = StyleSheet.create({
+  library: {
+    paddingTop: 10,
+    minHeight: 1280,
+    backgroundColor: "#fff8e6",
+  },
   container: {
     width: "90%",
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 0,
     marginBottom: 0,
-  },
-  library: {
-    paddingTop: 10,
-    minHeight: 1280,
-    backgroundColor: "#fff8e6",
   },
   libraryInner: {
     display: "flex",
