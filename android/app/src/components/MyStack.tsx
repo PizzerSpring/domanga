@@ -7,6 +7,7 @@ import Libraries from "./Libraries";
 import Login from "./Login";
 import Nav from "./Nav";
 import Updates from "./Updates";
+import History from "./History";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,10 @@ const MyStack = () => {
         </Stack.Screen>
         <Stack.Screen name="Updates"
                       component={Updates}
+                      options={{title: ''}}>
+        </Stack.Screen>
+        <Stack.Screen name="History"
+                      component={History}
                       options={{title: ''}}>
         </Stack.Screen>
         <Stack.Screen name="Nav"

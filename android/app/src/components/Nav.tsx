@@ -21,7 +21,7 @@ const Nav = ({navigation}) => {
         <Text>Обновл...</Text>
       </Pressable>
       <Pressable style={styles.menuImage}  onPress={() =>
-        navigation.navigate('Login')
+        navigation.navigate('History')
       }>
         <Image source={require("../assets/images/history.png")}
                style={{ width: 24, height: 24 }} />
