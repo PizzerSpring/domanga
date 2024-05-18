@@ -34,7 +34,7 @@ const Nav = ({navigation}) => {
                style={{ width: 24, height: 24 }} />
         <Text>Поиско...</Text>
       </Pressable>
-      <Pressable style={styles.menuImage}  onPress={() =>
+      <Pressable disabled style={styles.menuImage}  onPress={() =>
         navigation.navigate('Login')
       }>
         <Image source={require("../assets/images/settings.png")}

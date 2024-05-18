@@ -26,6 +26,10 @@ const MyStack = () => {
                       component={History}
                       options={{title: ''}}>
         </Stack.Screen>
+        <Stack.Screen name="Login"
+                      component={Login}
+                      options={{title: ''}}>
+        </Stack.Screen>
         <Stack.Screen name="Nav"
                       component={Nav}
                       options={{title: ''}}>

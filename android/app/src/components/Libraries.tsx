@@ -1,10 +1,15 @@
 /* eslint-disable */
 
-import React from "react";
-import { View, StyleSheet, Text, Image, Button } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet, Text, Image, Button, Linking } from "react-native";
 import Nav from "./Nav";
+import WebView from "react-native-webview";
+import Login from "./Login";
+
+const sources = [];
 
 const Libraries = ({ navigation }) => {
+  const[src, setSrc] = useState();
   return (
     <View style={styles.library}>
       <View style={styles.container}>
@@ -36,7 +41,7 @@ const styles = StyleSheet.create({
   library: {
     paddingTop: 10,
     height: "100%",
-    backgroundColor: "#fff8e6"
+    backgroundColor: "#fff8e6",
   },
   container: {
     width: "90%",

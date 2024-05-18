@@ -5,49 +5,46 @@ import { Button, StyleSheet, Text, TextInput, View, Pressable, Linking } from "r
 import WebView from "react-native-webview";
 import Nav from "./Nav";
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.buttonTextStyle}>Вход</Text>
-      <Nav navigation={navigation}/>
-      {/*<WebView source={{uri: 'https://www.google.com/'}}/>*/}
-      {/*<TextInput style={styles.borderInput}></TextInput>
-      <TextInput style={styles.borderInput}></TextInput>
-      <Pressable style={styles.buttonStyle}>
-        <Text style={styles.buttonTextStyle}>Вход</Text>
-        <Text style={{color: 'blue'}}
-              onPress={() => Linking.openURL('https://remanga.org/')}>
-          Remanga
-        </Text>
-      </Pressable>*/}
-    </View>
+
+        <WebView javaScriptEnabled={true}
+                 domStorageEnabled={true}
+                 startInLoadingState={true}
+                 scalesPageToFit={true}
+                 style={{width: 320, height: 200}} source={{ uri: "https://www.google.com/" }}
+        cacheEnabled={false}/>
+
+
+
+
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center'
+    /*alignItems: 'center'*/
   },
   borderInput: {
-    borderColor: '#000000',
-    borderStyle: 'solid',
+    borderColor: "#000000",
+    borderStyle: "solid",
     borderWidth: 1,
     borderRadius: 10,
     width: 200,
-    marginTop: 40,
+    marginTop: 40
   },
   buttonStyle: {
-    borderColor: '#000000',
-    borderStyle: 'solid',
+    borderColor: "#000000",
+    borderStyle: "solid",
     borderWidth: 1,
     borderRadius: 10,
     width: 200,
     marginTop: 40,
-    backgroundColor: '#b9f7f5',
+    backgroundColor: "#b9f7f5"
   },
   buttonTextStyle: {
-    textAlign: 'center',
-    padding: 10,
+    textAlign: "center",
+    padding: 10
   }
 });
 
