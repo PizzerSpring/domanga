@@ -1,23 +1,61 @@
 /* eslint-disable */
 
 import React from "react";
-import { Button, View } from "react-native";
+import { Button, Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 const Nav = ({navigation}) => {
   return (
-    <View>
-      <Button
-        title="Go to Login"
-        onPress={() =>
-          navigation.navigate('Login')
-        }/>
-      <Button
-        title="Go to Library"
-        onPress={() =>
-          navigation.navigate('Library')
-        }/>
+    <View style={styles.container}>
+      <Pressable style={styles.menuImage}  onPress={() =>
+        navigation.navigate('Library')
+      }>
+        <Image source={require("../assets/images/books.png")}
+               style={{ width: 24, height: 24,  }} />
+        <Text>Библио...</Text>
+      </Pressable>
+      <Pressable style={styles.menuImage}  onPress={() =>
+        navigation.navigate('Login')
+      }>
+        <Image source={require("../assets/images/updates.png")}
+               style={{ width: 24, height: 24 }} />
+        <Text>Обновл...</Text>
+      </Pressable>
+      <Pressable style={styles.menuImage}  onPress={() =>
+        navigation.navigate('Login')
+      }>
+        <Image source={require("../assets/images/history.png")}
+               style={{ width: 24, height: 24 }} />
+        <Text>История</Text>
+      </Pressable>
+      <Pressable style={styles.menuImage}  onPress={() =>
+        navigation.navigate('Login')
+      }>
+        <Image source={require("../assets/images/compass.png")}
+               style={{ width: 24, height: 24 }} />
+        <Text>Поиско...</Text>
+      </Pressable>
+      <Pressable style={styles.menuImage}  onPress={() =>
+        navigation.navigate('Login')
+      }>
+        <Image source={require("../assets/images/settings.png")}
+               style={{ width: 24, height: 24 }} />
+        <Text>Настро...</Text>
+      </Pressable>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#f3ebd4",
+    padding:15
+  },
+  menuImage: {
+    alignItems: 'center'
+  }
+});
 
 export default Nav;

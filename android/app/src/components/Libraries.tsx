@@ -4,7 +4,7 @@ import React from "react";
 import { View, StyleSheet, Text, Image, Button } from "react-native";
 import Nav from "./Nav";
 
-const Libraries = ({navigation}) => {
+const Libraries = ({ navigation }) => {
   return (
     <View style={styles.library}>
       <View style={styles.container}>
@@ -25,9 +25,9 @@ const Libraries = ({navigation}) => {
           <Image source={require("../assets/images/empty.png")}
                  style={[{ width: 64, height: 64 }, styles.libraryContentImg]} />
           <Text style={styles.libraryContentText}>Ваша библиотека пуста</Text>
-          <Nav navigation={navigation}/>
         </View>
       </View>
+      <Nav  navigation={navigation} />
     </View>
   );
 };
@@ -35,8 +35,8 @@ const Libraries = ({navigation}) => {
 const styles = StyleSheet.create({
   library: {
     paddingTop: 10,
-    minHeight: 1280,
-    backgroundColor: "#fff8e6",
+    height: "100%",
+    backgroundColor: "#fff8e6"
   },
   container: {
     width: "90%",
@@ -64,13 +64,14 @@ const styles = StyleSheet.create({
   },
   libraryContentInner: {
     alignItems: "center",
+    marginBottom: 250
   },
   libraryContentImg: {
     marginBottom: 30
   },
   libraryContentText: {
     color: "#55503d"
-  }
+  },
 });
 
 export default Libraries;
