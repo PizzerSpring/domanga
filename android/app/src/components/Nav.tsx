@@ -14,7 +14,7 @@ const Nav = ({navigation}) => {
         <Text>Библио...</Text>
       </Pressable>
       <Pressable style={styles.menuImage}  onPress={() =>
-        navigation.navigate('Login')
+        navigation.navigate('Updates')
       }>
         <Image source={require("../assets/images/updates.png")}
                style={{ width: 24, height: 24 }} />

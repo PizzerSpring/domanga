@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Libraries from "./Libraries";
 import Login from "./Login";
 import Nav from "./Nav";
+import Updates from "./Updates";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,8 +17,8 @@ const MyStack = () => {
                       component={Libraries}
                       options={{title: ''}}>
         </Stack.Screen>
-        <Stack.Screen name="Login"
-                      component={Login}
+        <Stack.Screen name="Updates"
+                      component={Updates}
                       options={{title: ''}}>
         </Stack.Screen>
         <Stack.Screen name="Nav"
