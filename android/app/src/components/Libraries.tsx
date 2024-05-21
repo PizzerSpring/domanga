@@ -6,7 +6,7 @@ import Nav from "./Nav";
 import WebView from "react-native-webview";
 import Login from "./Login";
 
-const sources = [
+export const sources = [
   {
     id: 1,
     title: "Google"
@@ -45,7 +45,7 @@ const Libraries = ({ navigation }) => {
         {src.map(s => {
           return (
             <Pressable onPress={() =>
-              navigation.navigate("Preview")
+              navigation.navigate("Preview", { names: s.title})
             }>
               <View style={styles.srcComponent} key={s.id}>
                 <Text>{s.title}</Text>

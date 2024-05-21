@@ -1,17 +1,17 @@
 /* eslint-disable */
 
-import React from "react";
+import React, { useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import Nav from "./Nav";
 
-const Preview = () => {
+const Preview = ({navigation, route}) => {
   return (
     <View style={styles.preview}>
       <View style={styles.container}>
         <View style={styles.previewInner}>
           <View>
             <Image/>
-            <Text style={styles.previewText}>rrr</Text>
+            <Text style={styles.previewText}>{route.params.names}</Text>
           </View>
           <View style={styles.previewImages}>
             <Image source={require("../assets/images/loupe.png")}
@@ -37,7 +37,7 @@ const Preview = () => {
           </View>
         </View>
         <View>
-          <Text></Text>
+          <Text>Preview</Text>
         </View>
       </View>
     </View>
