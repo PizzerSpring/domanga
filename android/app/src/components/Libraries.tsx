@@ -6,10 +6,23 @@ import Nav from "./Nav";
 import WebView from "react-native-webview";
 import Login from "./Login";
 
-const sources = [];
+const sources = [
+  {
+    id: 1,
+    title: 'Google',
+  },
+  {
+    id: 2,
+    title: 'Remanga',
+  },
+  {
+    id: 3,
+    title: 'Mangalib',
+  },
+];
 
 const Libraries = ({ navigation }) => {
-  const[src, setSrc] = useState();
+  const[src, setSrc] = useState(sources);
   return (
     <View style={styles.library}>
       <View style={styles.container}>
@@ -26,11 +39,20 @@ const Libraries = ({ navigation }) => {
                    style={{ width: 24, height: 24 }} />
           </View>
         </View>
-        <View style={styles.libraryContentInner}>
+        {src.map(s => {
+          return (
+            <View style={styles.srcComponent} key={s.id}>
+              <Text>{s.title}</Text>
+              <Image source={require("../assets/images/google.png")}
+                     style={{ width: 24, height: 24 }} />
+            </View>
+          )
+        })}
+        {/*<View style={styles.libraryContentInner}>
           <Image source={require("../assets/images/empty.png")}
                  style={[{ width: 64, height: 64 }, styles.libraryContentImg]} />
           <Text style={styles.libraryContentText}>Ваша библиотека пуста</Text>
-        </View>
+        </View>*/}
       </View>
       <Nav  navigation={navigation} />
     </View>
@@ -42,6 +64,8 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     height: "100%",
     backgroundColor: "#fff8e6",
+    display: 'flex',
+    justifyContent: 'space-between'
   },
   container: {
     width: "90%",
@@ -55,7 +79,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 250
+    marginBottom: 50
   },
   libraryText: {
     fontSize: 24,
@@ -69,7 +93,6 @@ const styles = StyleSheet.create({
   },
   libraryContentInner: {
     alignItems: "center",
-    marginBottom: 250
   },
   libraryContentImg: {
     marginBottom: 30
@@ -77,6 +100,17 @@ const styles = StyleSheet.create({
   libraryContentText: {
     color: "#55503d"
   },
+  srcComponent: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: '#000000',
+    padding: 10,
+    margin: 5,
+    borderRadius: 10
+  }
 });
 
 export default Libraries;
