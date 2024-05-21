@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React, { useState } from "react";
-import { View, StyleSheet, Text, Image, Button, Linking } from "react-native";
+import { View, StyleSheet, Text, Image, Button, Linking, Pressable } from "react-native";
 import Nav from "./Nav";
 import WebView from "react-native-webview";
 import Login from "./Login";
@@ -9,20 +9,23 @@ import Login from "./Login";
 const sources = [
   {
     id: 1,
-    title: 'Google',
+    title: "Google"
+    //image src
   },
   {
     id: 2,
-    title: 'Remanga',
+    title: "Remanga"
+    //image src
   },
   {
     id: 3,
-    title: 'Mangalib',
-  },
+    title: "Mangalib"
+    //image src
+  }
 ];
 
 const Libraries = ({ navigation }) => {
-  const[src, setSrc] = useState(sources);
+  const [src, setSrc] = useState(sources);
   return (
     <View style={styles.library}>
       <View style={styles.container}>
@@ -41,12 +44,16 @@ const Libraries = ({ navigation }) => {
         </View>
         {src.map(s => {
           return (
-            <View style={styles.srcComponent} key={s.id}>
-              <Text>{s.title}</Text>
-              <Image source={require("../assets/images/google.png")}
-                     style={{ width: 24, height: 24 }} />
-            </View>
-          )
+            <Pressable onPress={() =>
+              navigation.navigate("Preview")
+            }>
+              <View style={styles.srcComponent} key={s.id}>
+                <Text>{s.title}</Text>
+                <Image source={require("../assets/images/google.png")}
+                       style={{ width: 24, height: 24 }} />
+              </View>
+            </Pressable>
+          );
         })}
         {/*<View style={styles.libraryContentInner}>
           <Image source={require("../assets/images/empty.png")}
@@ -54,7 +61,7 @@ const Libraries = ({ navigation }) => {
           <Text style={styles.libraryContentText}>Ваша библиотека пуста</Text>
         </View>*/}
       </View>
-      <Nav  navigation={navigation} />
+      <Nav navigation={navigation} />
     </View>
   );
 };
@@ -64,15 +71,15 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     height: "100%",
     backgroundColor: "#fff8e6",
-    display: 'flex',
-    justifyContent: 'space-between'
+    display: "flex",
+    justifyContent: "space-between"
   },
   container: {
     width: "90%",
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 0,
-    marginBottom: 0,
+    marginBottom: 0
   },
   libraryInner: {
     display: "flex",
@@ -92,7 +99,7 @@ const styles = StyleSheet.create({
     flexBasis: 100
   },
   libraryContentInner: {
-    alignItems: "center",
+    alignItems: "center"
   },
   libraryContentImg: {
     marginBottom: 30
@@ -101,12 +108,12 @@ const styles = StyleSheet.create({
     color: "#55503d"
   },
   srcComponent: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
     borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: '#000000',
+    borderStyle: "solid",
+    borderColor: "#000000",
     padding: 10,
     margin: 5,
     borderRadius: 10
